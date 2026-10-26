@@ -1,0 +1,26 @@
+[
+  {
+    "id": "INC-001",
+    "texte": "Bonjour, mon ordinateur portable ne s'allume plus depuis ce matin. J'ai une présentation client à 14h et je ne peux pas accéder à mes fichiers. C'est vraiment urgent !"
+  },
+  {
+    "id": "INC-002",
+    "texte": "Je n'arrive pas à me connecter à l'espace RH pour télécharger ma fiche de paie. Le mot de passe ne fonctionne pas même après réinitialisation. C'est agaçant."
+  },
+  {
+    "id": "INC-003",
+    "texte": "Demande de remboursement de frais de déplacement du mois dernier. J'ai soumis le dossier il y a 3 semaines et toujours pas de nouvelles. Je commence à m'inquiéter."
+  },
+  {
+    "id": "INC-004",
+    "texte": "Notre contrat avec le fournisseur ACME expire vendredi. Il faut absolument le renouveler avant sinon on perd les conditions tarifaires. Qui s'en occupe ?"
+  },
+  {
+    "id": "INC-005",
+    "texte": "L'imprimante du 3ème étage ne fonctionne plus. C'est la 3ème fois ce mois-ci. Personne ne vient la réparer malgré mes relances. Je suis énervé."
+  },
+  {
+    "id": "INC-006",
+    "texte": "Je dois changé de mot de passe pour le logiciel financier dans 2 semaines, où trouver la procédure? Merci.."
+  }
+]

@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Ollama
+.ollama/
+
+# Models (gros fichiers)
+assets/models/*.gguf
+
+# ChromaDB
+assets/chroma/
+
+# Temporary
+/tmp/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
