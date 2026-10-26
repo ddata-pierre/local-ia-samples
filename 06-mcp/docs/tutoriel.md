@@ -1,9 +1,3 @@
-Voici la version complète et fonctionnelle du **Tuto 06 - Serveur MCP (Model Context Protocol)**.
-
-Le **Model Context Protocol (MCP)** est le standard ouvert promu par Anthropic qui permet de connecter de façon sécurisée des LLM à des outils externes (bases de données, API, outils locaux). Dans ce tutoriel, nous créons un **serveur MCP personnalisé en Python** et nous le connectons à notre LLM local (`Qwen2.5-3B-Instruct`) via un **client MCP**.
-
----
-
 # 06-mcp-server — Créer et consommer un serveur MCP local
 
 > **Objectif** : Développer un mini-serveur MCP (Model Context Protocol) sur mesure offrant des outils d'entreprise (consultation de stock & météo d'un site), puis connecter un LLM local qui utilise ce serveur via un protocole standardisé.
@@ -13,6 +7,7 @@ Le **Model Context Protocol (MCP)** est le standard ouvert promu par Anthropic q
 ---
 
 ## 1. Comprendre l'Architecture MCP
+Le **Model Context Protocol (MCP)** est le standard ouvert promu par Anthropic qui permet de connecter de façon sécurisée des LLM à des outils externes (bases de données, API, outils locaux). Dans ce tutoriel, nous créons un **serveur MCP personnalisé en Python** et nous le connectons à notre LLM local (`Qwen2.5-3B-Instruct`) via un **client MCP**.
 
 Le **Model Context Protocol (MCP)** fonctionne sur un schéma Client-Serveur :
 

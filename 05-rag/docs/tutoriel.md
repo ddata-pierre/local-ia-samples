@@ -1,7 +1,3 @@
-Voici le tutoriel complet directement au format Markdown pour le **Tuto 05 - RAG Local**, prêt à être copier-collé ou enregistré dans vos fichiers :
-
----
-
 # 05-rag-local — RAG 100% Local avec Preuve d'Origine des Données
 
 > **Objectif** : Implémenter un système RAG (Retrieval-Augmented Generation) 100% local sur CPU (N100) permettant de répondre à des questions sur des documents internes confidentiels, avec preuve que les réponses proviennent bien de la base documentaire et non de la mémoire du modèle.
