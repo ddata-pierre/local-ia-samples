@@ -1,4 +1,4 @@
-# 05-rag-local — RAG 100% Local avec Preuve d'Origine des Données
+# 05-rag-local - RAG 100% Local avec Preuve d'Origine des Données
 
 > **Objectif** : Implémenter un système RAG (Retrieval-Augmented Generation) 100% local sur CPU (N100) permettant de répondre à des questions sur des documents internes confidentiels, avec preuve que les réponses proviennent bien de la base documentaire et non de la mémoire du modèle.
 > **Durée** : ~20 min.
@@ -14,7 +14,7 @@ Si le modèle restitue ces informations exactes, c'est la preuve irréfutable qu
 
 ---
 
-## 2. Données d'exemple — La Base de Connaissances
+## 2. Données d'exemple - La Base de Connaissances
 
 Créez un dossier `assets/docs/` contenant ces 3 fichiers Markdown :
 
@@ -57,7 +57,7 @@ Le réseau Wi-Fi réservé aux prestataires et visiteurs externes est **DData-Gu
 
 ---
 
-## 3. Dockerfile optimisé — `assets/Dockerfile`
+## 3. Dockerfile optimisé - `assets/Dockerfile`
 
 Le Dockerfile réutilise l'image de base `local-ia/base-llm:latest` et inclut les dépendances légères pour la recherche sémantique.
 
@@ -80,7 +80,7 @@ CMD ["python3", "rag_app.py"]
 
 ---
 
-## 4. Moteur RAG 100% Local — `assets/rag_app.py`
+## 4. Moteur RAG 100% Local - `assets/rag_app.py`
 
 Ce script réalise les étapes clés du RAG :
 
@@ -90,7 +90,7 @@ Ce script réalise les étapes clés du RAG :
 
 ```python
 #!/usr/bin/env python3
-# rag_app.py — Application RAG locale avec preuve d'origine
+# rag_app.py - Application RAG locale avec preuve d'origine
 
 import os
 import glob
@@ -235,7 +235,7 @@ D'après le document code_wifi.md, le mot de passe du réseau Wi-Fi visiteurs (D
 
 ## 8. Exercices + Corrections
 
-### Exercice 1 — Ajouter un 4ème document + question multi-docs
+### Exercice 1 - Ajouter un 4ème document + question multi-docs
 
 **Consigne** : Créer `assets/docs/politique_tele travail.md` avec une politique de télétravail (ex: "2 jours/semaine max, validation manager 48h à l'avance"). Ajouter une question qui nécessite de combiner ce doc + un autre (ex: "Je veux télétravailler vendredi, quel préavis pour poser congé ?").
 
@@ -252,7 +252,7 @@ EOF
 # Rebuild + run (le script lit automatiquement tous les *.md)
 ```
 
-### Exercice 2 — Remplacer TF-IDF par embeddings denses (sentence-transformers)
+### Exercice 2 - Remplacer TF-IDF par embeddings denses (sentence-transformers)
 
 **Consigne** : Remplacer `TfidfVectorizer` + `cosine_similarity` par `sentence-transformers` (modèle `all-MiniLM-L6-v2`, ~80 Mo) pour une recherche sémantique plus fine.
 

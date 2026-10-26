@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# classify.py — Classification précise avec Few-Shot Prompting
+# classify.py - Classification précise avec Few-Shot Prompting
 
 # === PROMPTS (modifiables sans toucher à la logique) ===
 SYSTEM_PROMPT = """Tu es un expert en triage de tickets de support d'entreprise.

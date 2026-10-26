@@ -1,4 +1,4 @@
-# 06-mcp-server — Créer et consommer un serveur MCP local
+# 06-mcp-server - Créer et consommer un serveur MCP local
 
 > **Objectif** : Développer un mini-serveur MCP (Model Context Protocol) sur mesure offrant des outils d'entreprise (consultation de stock & météo d'un site), puis connecter un LLM local qui utilise ce serveur via un protocole standardisé.
 > **Durée** : ~25 min.
@@ -39,7 +39,7 @@ Créez un dossier `06-mcp-server/assets` avec les fichiers suivants :
 
 ---
 
-## 3. Développement du Serveur MCP — `assets/mcp_server.py`
+## 3. Développement du Serveur MCP - `assets/mcp_server.py`
 
 Nous utilisons le SDK officiel `mcp` et sa surcouche simplifiée `FastMCP` pour exposer deux outils :
 
@@ -48,7 +48,7 @@ Nous utilisons le SDK officiel `mcp` et sa surcouche simplifiée `FastMCP` pour 
 
 ```python
 #!/usr/bin/env python3
-# mcp_server.py — Mini Serveur MCP avec FastMCP
+# mcp_server.py - Mini Serveur MCP avec FastMCP
 
 from mcp.server.fastmcp import FastMCP
 
@@ -101,13 +101,13 @@ if __name__ == "__main__":
 
 ---
 
-## 4. Développement du Client LLM + MCP — `assets/mcp_client.py`
+## 4. Développement du Client LLM + MCP - `assets/mcp_client.py`
 
 Le client se connecte au serveur MCP via des sous-processus (`stdio`), lit le catalogue d'outils déclarés par le serveur, et passe les schémas au LLM pour exécuter un **Function Calling** autonome.
 
 ```python
 #!/usr/bin/env python3
-# mcp_client.py — Client MCP + Inférence LLM locale
+# mcp_client.py - Client MCP + Inférence LLM locale
 
 # === PROMPTS (modifiables sans toucher à la logique) ===
 # Le prompt système est construit dynamiquement avec les outils découverts
@@ -215,7 +215,7 @@ if __name__ == "__main__":
 
 ---
 
-## 5. Dockerfile — `assets/Dockerfile`
+## 5. Dockerfile - `assets/Dockerfile`
 
 ```dockerfile
 FROM local-ia/base-llm:latest
@@ -287,7 +287,7 @@ Il reste actuellement 14 unités du serveur N100 en stock. Elles se trouvent à 
 
 ## 9. Exercices + Corrections
 
-### Exercice 1 — Ajouter un outil de conversion de devise
+### Exercice 1 - Ajouter un outil de conversion de devise
 
 **Consigne** : Ajouter un outil `convertir_devise(montant: float, de: str, vers: str) -> str` dans `mcp_server.py` avec un taux de change fixe (ex: 1 EUR = 1.08 USD). Tester avec la question : "Combien font 500 EUR en USD ?".
 
@@ -307,7 +307,7 @@ def convertir_devise(montant: float, de: str, vers: str) -> str:
 ```
 Rebuild + run. Le LLL découvrira l'outil automatiquement via `list_tools()`.
 
-### Exercice 2 — Changer le transport : stdio → SSE (HTTP)
+### Exercice 2 - Changer le transport : stdio → SSE (HTTP)
 
 **Consigne** : Modifier le serveur pour écouter en HTTP/SSE (port 8000) au lieu de stdio, et adapter le client pour se connecter via `streamablehttp_client`.
 

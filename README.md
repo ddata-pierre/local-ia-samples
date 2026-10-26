@@ -1,4 +1,4 @@
-# IA Locale — Démos Éducatives Complètes
+# IA Locale - Démos Éducatives Complètes
 
 > **But** : comprendre comment fonctionne l'IA en local, sans cloud, sur du matériel modeste (Intel N100, 800 MHz, 16 Go RAM).
 > **Public** : développeurs, data engineers, curieux techniques.
@@ -10,7 +10,7 @@
 
 ```
 local-ia/
-├── 01-ollama/          # Ollama en conteneur (Podman) — Dockerfile + API REST
+├── 01-ollama/          # Ollama en conteneur (Podman) - Dockerfile + API REST
 ├── 02-raw-llama/       # LLM sans Ollama : image de base + llama.cpp (Python)
 ├── 03-classification   # Classification de tickets (département, frustration, urgence)
 ├── 04-extraction       # Extraction d'entités (prénom, nom, âge, email) depuis CSV
@@ -20,8 +20,8 @@ local-ia/
 ```
 
 Chaque dossier contient :
-- `docs/tutoriel.md` — explications pas à pas (français, ~10–25 min lecture)
-- `assets/` — Dockerfiles, scripts Python, données, modèles
+- `docs/tutoriel.md` - explications pas à pas (français, ~10–25 min lecture)
+- `assets/` - Dockerfiles, scripts Python, données, modèles
 
 ---
 
@@ -54,7 +54,7 @@ Chaque dossier contient :
 
 ## Démarrage rapide
 
-### Étape 0 — Image de base commune (requise pour 02 à 06)
+### Étape 0 - Image de base commune (requise pour 02 à 06)
 
 ```bash
 # Une seule fois : build de l'image de base + téléchargement modèle partagé
@@ -77,7 +77,7 @@ hf_hub_download(
 
 ---
 
-### 01 — Ollama (Podman, indépendant)
+### 01 - Ollama (Podman, indépendant)
 
 ```bash
 cd 01-ollama
@@ -90,7 +90,7 @@ podman exec -it ollama ollama run qwen2.5:0.5b   # REPL interactive
 
 ---
 
-### 02 — Sans Ollama (image de base déjà faite à l'étape 0)
+### 02 - Sans Ollama (image de base déjà faite à l'étape 0)
 
 ```bash
 # REPL Python interactif avec le modèle partagé
@@ -109,7 +109,7 @@ while True:
 
 ---
 
-### 03 — Classification de tickets
+### 03 - Classification de tickets
 
 ```bash
 cd 03-classification/assets
@@ -120,7 +120,7 @@ podman run --rm -v shared-models:/models local-ia/classification:tuto03
 
 ---
 
-### 04 — Extraction d'entités (CSV → JSON/CSV)
+### 04 - Extraction d'entités (CSV → JSON/CSV)
 
 ```bash
 cd 04-extraction/assets
@@ -131,7 +131,7 @@ podman run --rm -v shared-models:/models local-ia/extraction:tuto04
 
 ---
 
-### 05 — RAG local avec preuve d'origine
+### 05 - RAG local avec preuve d'origine
 
 ```bash
 cd 05-rag/assets
@@ -142,7 +142,7 @@ podman run --rm -v shared-models:/models local-ia/rag-demo:tuto05
 
 ---
 
-### 06 — Serveur MCP + Client LLM
+### 06 - Serveur MCP + Client LLM
 
 ```bash
 cd 06-mcp/assets
@@ -185,11 +185,11 @@ podman run --rm -v shared-models:/models local-ia/mcp-demo:tuto06
 ## Licence
 
 Code : MIT. Modèles : licences respectives (Apache 2.0 pour Qwen/SmolLM, Llama 2 pour TinyLlama).
-Usage éducatif uniquement — pas de garantie de production.
+Usage éducatif uniquement - pas de garantie de production.
 
 ---
 
 ## Auteur
 
-Pierre Dupont — Architecte Data freelance (ddata.fr)
+Pierre Dupont - Architecte Data freelance (ddata.fr)
 Créé pour démonstration pédagogique, octobre 2026.

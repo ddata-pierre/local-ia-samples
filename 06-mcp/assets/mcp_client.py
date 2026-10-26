@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# mcp_client.py — Client MCP + Inférence LLM locale
+# mcp_client.py - Client MCP + Inférence LLM locale
 
 # === PROMPTS (modifiables sans toucher à la logique) ===
 # Le prompt système est construit dynamiquement avec les outils découverts

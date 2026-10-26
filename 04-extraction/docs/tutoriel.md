@@ -1,4 +1,4 @@
-# 04-extraction — Extraction d'informations structurées (Entités nommées & Fiches profils)
+# 04-extraction - Extraction d'informations structurées (Entités nommées & Fiches profils)
 
 > **Objectif** : Utiliser un LLM local pour lire des biographies en texte libre issues d'un fichier CSV, extraire de façon structurée les entités clés (**Prénom, Nom, Âge, Email**) et générer automatiquement des fiches profils sous forme de données JSON et CSV exploitables.  
 > **Durée** : ~15 min.  
@@ -17,7 +17,7 @@ L'objectif de ce tutoriel est d'implémenter un pipeline d'**Extraction d'Entit�
 
 ---
 
-## 2. Jeux de données — `assets/prospects.csv`
+## 2. Jeux de données - `assets/prospects.csv`
 
 Créez le fichier `assets/prospects.csv` avec 5 exemples de présentations en texte libre (incluant des formats variables d'âge, des adresses email noyées dans le texte, et des tournures idiomatiques) :
 
@@ -32,13 +32,13 @@ id,texte_libre
 
 ---
 
-## 3. Script d'extraction — `assets/extract.py`
+## 3. Script d'extraction - `assets/extract.py`
 
 Le script utilise `csv.DictReader` pour lire le fichier source, puis la méthode `create_chat_completion` avec un prompt **Few-Shot** pour garantir une extraction exacte sans aucune hallucination.
 
 ```python
 #!/usr/bin/env python3
-# extract.py — Extraction structurée d'entités (Fiches profils) avec Qwen2.5-3B
+# extract.py - Extraction structurée d'entités (Fiches profils) avec Qwen2.5-3B
 
 import csv
 import json
@@ -142,7 +142,7 @@ print(f"  - Export CSV  : {OUTPUT_CSV}")
 
 ---
 
-## 4. Dockerfile optimisé — `assets/Dockerfile`
+## 4. Dockerfile optimisé - `assets/Dockerfile`
 
 En nous appuyant sur l'image de base `local-ia/base-llm:latest` créée précédemment, le Dockerfile de ce tutoriel est extrêmement rapide à construire :
 
@@ -266,13 +266,13 @@ podman rm temp-extract
 
 ## 9. Exercices + Corrections
 
-### Exercice 1 — Ajouter un champ téléphone
+### Exercice 1 - Ajouter un champ téléphone
 
 **Consigne** : Étendre l'extraction pour capturer aussi le numéro de téléphone (format français : `06 12 34 56 78` ou `+33 6 12 34 56 78`).
 
 **Correction** : Dans `SYSTEM_PROMPT`, ajouter `"telephone": "Numéro de téléphone (string) ou null"` dans le JSON et dans les consignes. Dans `FEW_SHOT_MESSAGES`, ajouter un exemple avec téléphone. Relancer l'extraction.
 
-### Exercice 2 — Comparer modèles (vitesse vs qualité)
+### Exercice 2 - Comparer modèles (vitesse vs qualité)
 
 **Consigne** : Télécharger `SmolLM2-135M` dans le volume partagé, modifier `MODEL_PATH` dans `extract.py`, relancer et comparer temps d'exécution + qualité d'extraction (noms composés, âges).
 

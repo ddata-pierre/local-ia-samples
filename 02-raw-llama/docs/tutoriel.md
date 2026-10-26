@@ -1,4 +1,4 @@
-# 02-raw-llama — LLM sans Ollama : deux approches (llama.cpp + llamafile)
+# 02-raw-llama - LLM sans Ollama : deux approches (llama.cpp + llamafile)
 
 > **Objectif** : faire tourner un LLM en local sans Ollama, directement depuis Python.
 > **Durée** : ~10 min.
@@ -17,7 +17,7 @@ Montrer comment utiliser un LLM directement en Python.
 
 ## 2. Création d'une image de base pour les tutoriels
 
-### 2.1 Dockerfile — Image avec modèles préchargés
+### 2.1 Dockerfile - Image avec modèles préchargés
 
 **Fichier** : `assets/base-llm/Dockerfile.base`
 
@@ -130,7 +130,7 @@ print(llm('Bonjour', max_tokens=32)['choices'][0]['text'])
 
 ## 6. Exercices + Corrections
 
-### Exercice 1 — Mode streaming token par token
+### Exercice 1 - Mode streaming token par token
 
 **Consigne** : Modifier le test rapide pour afficher la réponse token par token (streaming).
 
@@ -145,7 +145,7 @@ print()
 "
 ```
 
-### Exercice 2 — Comparer deux modèles
+### Exercice 2 - Comparer deux modèles
 
 **Consigne** : Télécharger `Phi-3-mini-4k-instruct-q4.gguf` (plus capable) et comparer la réponse à une même question technique.
 
@@ -194,4 +194,4 @@ podman volume rm shared-models
 - [llama.cpp GitHub](https://github.com/ggerganov/llama.cpp)
 - [llama-cpp-python docs](https://github.com/abetlen/llama-cpp-python)
 - [llamafile Mozilla](https://github.com/Mozilla-Ocho/llamafile)
-- Prochaine étape : **03-classification** — classification structurée de tickets avec le modèle partagé.
+- Prochaine étape : **03-classification** - classification structurée de tickets avec le modèle partagé.

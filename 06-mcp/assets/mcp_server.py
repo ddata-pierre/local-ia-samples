@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# mcp_server.py — Mini Serveur MCP avec FastMCP
+# mcp_server.py - Mini Serveur MCP avec FastMCP
 
 from mcp.server.fastmcp import FastMCP
 

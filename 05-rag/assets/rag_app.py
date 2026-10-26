@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# rag_app.py — Application RAG locale avec preuve d'origine
+# rag_app.py - Application RAG locale avec preuve d'origine
 
 import os
 import glob

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# extract.py — Extraction structurée d'entités (Fiches profils) avec Qwen2.5-3B
+# extract.py - Extraction structurée d'entités (Fiches profils) avec Qwen2.5-3B
 
 # === PROMPTS (modifiables sans toucher à la logique) ===
 SYSTEM_PROMPT = """Tu es un système expert d'extraction d'entités nommées.

@@ -1,4 +1,4 @@
-# 03-classification — Classification de tickets d'incidents (Modèle de décision)
+# 03-classification - Classification de tickets d'incidents (Modèle de décision)
 
 > **Objectif** : utiliser un LLM local pour classifier automatiquement des tickets d'incidents (département, frustration, urgence).
 > **Durée** : ~10 min.
@@ -15,7 +15,7 @@ On reçoit des tickets utilisateurs en texte libre. Il faut les router automatiq
 
 ---
 
-## 2. Données d'exemple — 5 tickets
+## 2. Données d'exemple - 5 tickets
 
 **Fichier** : `assets/tickets.json`
 
@@ -62,7 +62,7 @@ Aucun texte additionnel, pas de markdown, juste le JSON.
 
 ---
 
-## 4. Dockerfile — Image de classification
+## 4. Dockerfile - Image de classification
 
 **Fichier** : `assets/Dockerfile`
 
@@ -81,11 +81,11 @@ CMD ["python3", "classify.py"]
 
 ---
 
-## 5. Script de classification — `classify.py`
+## 5. Script de classification - `classify.py`
 
 ```python
 #!/usr/bin/env python3
-# classify.py — Classification de tickets avec llama.cpp
+# classify.py - Classification de tickets avec llama.cpp
 
 import json
 from llama_cpp import Llama
@@ -184,13 +184,13 @@ podman run --rm -v shared-models:/models local-ia/classification:tuto03
 
 ## 8. Exercices + Corrections
 
-### Exercice 1 — Ajouter un champ "priorité"
+### Exercice 1 - Ajouter un champ "priorité"
 
 **Consigne** : Ajoute un champ `priorite` (P1/P2/P3/P4) basé sur urgence + frustration.
 
 **Correction** : Modifie `SYSTEM_PROMPT` pour inclure `"priorite": "P1" | "P2" | "P3" | "P4"` et la logique de calcul.
 
-### Exercice 2 — Router vers email
+### Exercice 2 - Router vers email
 
 **Consigne** : Au lieu d'afficher, envoie un email au bon département (simulation `print`).
 
@@ -200,7 +200,7 @@ EMAILS = {"IT": "it@entreprise.fr", "RH": "rh@entreprise.fr", ...}
 print(f"→ Envoi à {EMAILS[classification['departement']]} : {ticket['id']}")
 ```
 
-### Exercice 3 — Comparer modèles
+### Exercice 3 - Comparer modèles
 
 **Consigne** : Teste avec `Phi-3-mini-4k-instruct-q4.gguf` (plus capable) vs `Qwen2.5-3B-Instruct` (modèle par défaut).
 
@@ -222,4 +222,4 @@ rm -f assets/resultats.json
 - Fine-tuning sur tickets historiques (LoRA)
 - Ajout confiance score (logprobs)
 - Intégration ticketing (Jira, ServiceNow, GLPI)
-- Prochaine étape : **04-extraction** — extraction d'entités nommées.
+- Prochaine étape : **04-extraction** - extraction d'entités nommées.

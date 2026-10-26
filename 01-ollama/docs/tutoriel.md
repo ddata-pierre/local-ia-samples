@@ -1,4 +1,4 @@
-# 01-ollama — Ollama en conteneur (Podman)
+# 01-ollama - Ollama en conteneur (Podman)
 
 > **Objectif** : faire tourner Ollama + modèles en conteneur, comprendre l'API REST.
 > **Durée** : ~10 min.
@@ -18,7 +18,7 @@
 
 ---
 
-## 2. Dockerfile — Image Ollama avec modèles préchargés
+## 2. Dockerfile - Image Ollama avec modèles préchargés
 
 **Fichier** : `Dockerfile` (à la racine de `01-ollama/`)
 
@@ -134,7 +134,7 @@ podman exec ollama-local ping -c 1 8.8.8.8 2>&1 || echo "ping échoué (attendu 
 
 ---
 
-## 4. Utilisation CLI — `podman exec`
+## 4. Utilisation CLI - `podman exec`
 
 Si vous avez fait le test sans réseau pensez à relancer le conteneur *ollama* (étape 3)
 
@@ -150,7 +150,7 @@ podman exec -it ollama ollama run qwen2.5:0.5b
 
 ---
 
-## 5. API REST — Exemples pas à pas (depuis l'hôte)
+## 5. API REST - Exemples pas à pas (depuis l'hôte)
 
 ### 5.1 Chat non-streaming (conversation multi-tours)
 
@@ -291,7 +291,7 @@ podman run --rm -v ollama-data:/data -v $(pwd):/backup alpine tar xzf /backup/ol
 
 ## 8. Exercices + Corrections
 
-### Exercice 1 — Modèle « Pirate »
+### Exercice 1 - Modèle « Pirate »
 
 **Consigne** : Crée un Modelfile qui force le ton « pirate ».
 
@@ -312,7 +312,7 @@ podman exec -it ollama ollama run pirate
 
 ---
 
-### Exercice 2 — Comparer modèles
+### Exercice 2 - Comparer modèles
 
 **Consigne** : Pose la même question à `smollm2:135m` et `qwen2.5:0.5b`, note la différence.
 
@@ -333,7 +333,7 @@ podman exec ollama ollama run qwen2.5:0.5b "$Q"
 
 ---
 
-### Exercice 3 — API Python (client `ollama`)
+### Exercice 3 - API Python (client `ollama`)
 
 **Consigne** : Installe `ollama` (`pip install ollama`) et réécris le `curl` chat en Python.
 
@@ -399,4 +399,4 @@ podman volume rm ollama-data
 - [Ollama API docs](https://github.com/ollama/ollama/blob/main/docs/api.md)
 - [Modelfile reference](https://github.com/ollama/ollama/blob/main/docs/modelfile.md)
 - [Podman docs](https://docs.podman.io/)
-- Prochaine étape : **02-raw-llama** — même chose sans Ollama, avec `llama.cpp` en conteneur.
+- Prochaine étape : **02-raw-llama** - même chose sans Ollama, avec `llama.cpp` en conteneur.
